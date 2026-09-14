@@ -1,0 +1,3 @@
+<p>{{isCurrent ? "Jelenlegi időzóna: " : ""}}{{currentTimezone}}</p>
+<p>{{date}}</p>
+<input type="button" value="Frissítés" (click)="refresh()"><input type="button" [disabled]="isCurrent" value="Jelenleginek jelöl" (click)="chooseCurrent()">
