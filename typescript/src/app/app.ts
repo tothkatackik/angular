@@ -10,4 +10,8 @@ import { AlmaComponent } from './alma/alma.component';
 export class App {
   protected readonly title = signal('typescript');
   st = "meow";
+
+  titleClick(alternateText:string) {
+    this.st=alternateText;
+  }
 }

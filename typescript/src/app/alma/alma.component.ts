@@ -1,6 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-alma',
@@ -10,7 +9,7 @@ import { EventEmitter } from 'stream';
 })
 export class AlmaComponent {
   @Input() subtitle="alma";
-  @Output() titleClick = new EventEmitter();
+  @Output() titleClick = new EventEmitter<string>();
 
   title="Pite";
   alternateText="Ez egy zsalmás pite";

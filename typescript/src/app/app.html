@@ -1,2 +1,2 @@
-<app-alma [subtitle]="st"></app-alma>
-<input type="button" value="ok!" (click)="onClickTitle()">
+<app-alma [subtitle]="st" (titleClick)="titleClick($event)"></app-alma>
+{{st}}
