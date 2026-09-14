@@ -1,0 +1,16 @@
+main {
+    font-family: 'Comic Sans MS';
+    p {
+        color: red;
+    }
+
+    ul {
+        color: yellow;
+        li {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
