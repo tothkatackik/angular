@@ -11,7 +11,21 @@ export class App {
   protected readonly title = signal('timezones');
   isCurrent = false;
 
-  isChanged(isCurrent:boolean) {
-    this.isCurrent = !isCurrent;
+  isChanged(p:{"currentTimezone":string, "isCurrent":boolean}) {
+    for (const e of this.timezones) {
+      if (e.currentTimezone == p.currentTimezone) e.isCurrent=true;
+      else e.isCurrent = false;
+    }
   }
+
+  timezones = [
+    {
+      "currentTimezone": "America/New_York",
+      "isCurrent": true
+    },
+    {
+      "currentTimezone": "Europe/Budapest",
+      "isCurrent": false
+    }
+  ]
 }

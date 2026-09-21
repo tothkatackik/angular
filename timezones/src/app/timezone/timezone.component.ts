@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TimezoneComponent {
   @Input() isCurrent:boolean = false;
   @Input() currentTimezone:string = "";
-  @Output() isChanged = new EventEmitter<boolean>();
+  @Output() isChanged = new EventEmitter<{"currentTimezone":string, "isCurrent":boolean}>();
   date:string = "";
 
   refresh():void {
@@ -18,7 +18,7 @@ export class TimezoneComponent {
 
   chooseCurrent() {
     this.isCurrent = !this.isCurrent;
-    this.isChanged.emit(this.isCurrent);
+    this.isChanged.emit({"currentTimezone": this.currentTimezone, "isCurrent": this.isCurrent});
   }
 
 }

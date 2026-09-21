@@ -9,10 +9,24 @@ import { TetelComponent } from './tetel/tetel.component';
 })
 export class BevasarloListaComponent {
 
-  
+  tetelek = [
+    {
+      "nev": "alma",
+      "db": 0,
+      "cel": 2
+    },
+    {
+      "nev": "plainka",
+      "db": 0,
+      "cel": 10
+    },
+    ]
 
-  kesz(uzenet:string):void {
-    console.log("alma");
-    alert(uzenet);
+  kesz(p:{"nev":string, "db":number}):void {
+    for(const e of this.tetelek) {
+      if (e.nev == p.nev) {
+        e.db=p.db;
+      }
+    }
   }
 }

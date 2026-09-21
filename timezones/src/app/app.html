@@ -1,3 +1,5 @@
 <h1>Timezones</h1>
-<app-timezone currentTimezone="America/New_York" [isCurrent]="false" (isChanged)="isChanged($event)"></app-timezone>
-<app-timezone currentTimezone="Europe/Budapest" [isCurrent]="false" (isChanged)="isChanged($event)"></app-timezone>
+@for (item of timezones; track $index) {
+    <app-timezone [currentTimezone]="item.currentTimezone" [isCurrent]="item.isCurrent" (isChanged)="isChanged($event)"></app-timezone>
+    <br/>
+}

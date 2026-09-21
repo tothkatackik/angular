@@ -1,3 +1,8 @@
 <h1>Bevasarlolista</h1>
-<app-tetel [nev]="'kenyér'" [cel]="2" (kesz)="kesz($event)" />
-<app-tetel nev="palinka" [cel]="5" (kesz)="kesz($event)"/>
+@for (item of tetelek; track $index) {
+    {{$index}}. <app-tetel [nev]="item.nev" [cel]="item.cel" [db]="item.db" (kesz)="kesz($event)" />
+    @if (item.cel===item.db) {
+        Kész! <br/>
+    }
+    <hr>
+}
