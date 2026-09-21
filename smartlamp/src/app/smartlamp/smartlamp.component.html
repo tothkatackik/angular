@@ -1,0 +1,12 @@
+<h2>{{name}}</h2>
+<button (click)="switch()">{{turnedOn?"Kikapcsolás":"Bekapcsolás"}}</button>
+@if (turnedOn) {
+    <p>Fényerő: {{brightness}}</p>
+    <input type="range" min="0" max="100" [(ngModel)]="brightness">
+    @if (brightness>=90) {
+        <p>FIGYELEM: Maximális fogyasztás!</p>
+    }
+}
+@if (!turnedOn) {
+    <p class="warning">A lámpa le van kapcsolva</p>
+}

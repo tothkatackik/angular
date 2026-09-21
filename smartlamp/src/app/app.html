@@ -1,0 +1,5 @@
+<h1>Okos otthon vezérlőpult</h1>
+<p>Jelenleg felkapcsolt lámpák száma: {{turnedOnCount}}</p>
+@for (item of rooms; track $index) {
+  <app-smartlamp [name]="item.name" [brightness]="item.brightness" [turnedOn]="item.turnedOn" (currentlyTurnedOn)="currentlyTurnedOn($event)"></app-smartlamp>
+}
