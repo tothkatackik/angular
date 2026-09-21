@@ -11,15 +11,13 @@ export class TetelComponent {
   @Input() cel:number=5;
   db=0;
 
-  @Output() kesz=new EventEmitter<string>()
+  @Output() kesz=new EventEmitter<{"nev": string, "db": number}>()
 
   novel() {
     if (this.db<this.cel) {
       this.db++;
+      let info = {"nev":this.nev, "db": this.db}
+      
     } 
-    if (this.db==this.cel){
-      this.kesz.emit(`${this.nev} termekből ${this.db} db megvásárolva!`)
-    }
-
   }
 }
